@@ -10,5 +10,6 @@ npm run eject
 npm start
 ```
 ### 项目结构
-![项目结构示例图](https://github.com/cirsyou/reactpjt/blob/master/src/assets/images/projectmenu.png)
+
+<img src="https://github.com/cirsyou/reactpjt/blob/master/src/assets/images/projectmenu.png" width="400" height="auto" />
 
