@@ -10,7 +10,10 @@
   background-color: #333;
   li {
     color: #fff;
-    font-size: 12px;
+    font-size: 13px;
+    a.current {
+      color: sandybrown;
+    }
     a {
       color: #fff;
       text-decoration: none;

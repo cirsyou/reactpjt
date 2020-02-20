@@ -12,29 +12,43 @@ import Routerview from '@/views/Router';
 import Example from '@/views/Example';
 
 class App extends React.Component {
-  render() {
+  constructor (props) {
+    super(props);
+    this.state = {
+      menuCurrent: 0 // 当前选中的menu
+    }
+  }
+  /**
+   * 切换选中的菜单
+   */
+  menuHandler (index) {
+    this.setState({
+      menuCurrent: index
+    })
+  }
+  render () {
     return (
       <Router>
         <div className={LayoutCss.wrapper}>
           <header>
             <ul className={LayoutCss.nav_box}>
-              <li>
-                <Link to="/">概览</Link>
+              <li onClick={() => this.menuHandler(0)}>
+                <Link to="/" className={(this.state.menuCurrent === 0) ? LayoutCss.current : ''}>概览</Link>
               </li>
-              <li>
-                <Link to="/componentview">组件</Link>
+              <li onClick={() => this.menuHandler(1)}>
+                <Link to="/componentview" className={(this.state.menuCurrent === 1) ? LayoutCss.current : ''}>组件</Link>
               </li>
-              <li>
-                <Link to="/event">事件</Link>
+              <li onClick={() => this.menuHandler(2)}>
+                <Link to="/event" className={(this.state.menuCurrent === 2) ? LayoutCss.current : ''}>事件</Link>
               </li>
-              <li>
-                <Link to="/lifecircle">生命周期</Link>
+              <li onClick={() => this.menuHandler(3)}>
+                <Link to="/lifecircle" className={(this.state.menuCurrent === 3) ? LayoutCss.current : ''}>生命周期</Link>
               </li>
-              <li>
-                <Link to="/routerview">路由</Link>
+              <li onClick={() => this.menuHandler(4)}>
+                <Link to="/routerview" className={(this.state.menuCurrent === 4) ? LayoutCss.current : ''}>路由</Link>
               </li>
-              <li>
-                <Link to="/example">实例</Link>
+              <li onClick={() => this.menuHandler(5)}>
+                <Link to="/example" className={(this.state.menuCurrent === 5) ? LayoutCss.current : ''}>实例</Link>
               </li>
             </ul>
           </header>
@@ -44,8 +58,7 @@ class App extends React.Component {
           <Route path="/lifecircle" component={Lifecircle}></Route>
           <Route path="/routerview" component={Routerview}></Route>
           <Route path="/example" component={Example}></Route>
-          react app.
-      </div>
+        </div>
       </Router>
     );
   }

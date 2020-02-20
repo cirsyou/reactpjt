@@ -6,7 +6,9 @@ class Routerview extends React.Component {
   }
   render () {
     return (
-      <div>Router page.</div>
+      <div className="content">
+        <div>react-router-dom 路由</div>
+      </div>
     )
   }
 }
