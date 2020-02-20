@@ -12,7 +12,7 @@ import Routerview from '@/views/Router';
 import Example from '@/views/Example';
 
 class App extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.state = {
       menuCurrent: 0 // 当前选中的menu
@@ -21,16 +21,16 @@ class App extends React.Component {
   /**
    * 切换选中的菜单
    */
-  menuHandler (index) {
+  menuHandler(index) {
     this.setState({
       menuCurrent: index
     })
   }
-  render () {
+  render() {
     return (
       <Router>
         <div className={LayoutCss.wrapper}>
-          <header>
+          <header className={LayoutCss.header_box}>
             <ul className={LayoutCss.nav_box}>
               <li onClick={() => this.menuHandler(0)}>
                 <Link to="/" className={(this.state.menuCurrent === 0) ? LayoutCss.current : ''}>概览</Link>
@@ -52,12 +52,14 @@ class App extends React.Component {
               </li>
             </ul>
           </header>
-          <Route path="/" exact component={Home}></Route>
-          <Route path="/componentview" component={Componentview}></Route>
-          <Route path="/event" component={Event}></Route>
-          <Route path="/lifecircle" component={Lifecircle}></Route>
-          <Route path="/routerview" component={Routerview}></Route>
-          <Route path="/example" component={Example}></Route>
+          <div className={LayoutCss.midbox}>
+            <Route path="/" exact component={Home}></Route>
+            <Route path="/componentview" component={Componentview}></Route>
+            <Route path="/event" component={Event}></Route>
+            <Route path="/lifecircle" component={Lifecircle}></Route>
+            <Route path="/routerview" component={Routerview}></Route>
+            <Route path="/example" component={Example}></Route>
+          </div>
         </div>
       </Router>
     );
