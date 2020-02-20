@@ -1,17 +1,24 @@
 import React from 'react';
+import logo from './logo.svg';
 import './App.css';
-// import AppDemo from '@/views/demo';
-// import CmtList from '@/views/CmtList';
-import CssFile from '@/views/CssFile';
 
 function App() {
   return (
     <div className="App">
-      app 
-      <h3>app title</h3>
-      {/* <AppDemo></AppDemo> */}
-      {/* <CmtList></CmtList> */}
-      <CssFile></CssFile>
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
 }
