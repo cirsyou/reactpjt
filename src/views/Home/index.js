@@ -1,4 +1,5 @@
-import React from 'react';// 局部加载样式表
+import React from 'react';
+// 局部加载样式表
 import LayoutCss from '@/assets/style/layout.module.scss';
 
 class Home extends React.Component {
