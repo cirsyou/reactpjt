@@ -1,6 +1,9 @@
 import React from 'react';
 // 局部加载样式表
 import LayoutCss from '@/assets/style/layout.module.scss';
+const _htmlParam = `<div dangerouslySetInnerHTML={{__html: this.state.msg}}></div>`;
+const _imgInsert = `<img src={require('@/assets/images/projectmenu.png')} />`;
+
 
 class Home extends React.Component {
   constructor (props) {
@@ -45,7 +48,22 @@ class Home extends React.Component {
           <img src={require('@/assets/images/projectmenu.png')} />
         </div>
         {/* 解析html */}
+        <div className={LayoutCss.itm_title}>react中html解析方式</div>
+        <div className={`${LayoutCss.code_area} ${LayoutCss.globalColor_white}`}>
+          react中在标签中直接插入html的字段，会被当作是字符串进行解析了，想实现如Vue中 v-html的功能，这个时候
+          我们需要用到标签的dangerouslySetInnerHTML属性，它的使用方式如下：<br />
+          <div className={LayoutCss.code_notes}>{_htmlParam}</div>
+        </div>
         <div dangerouslySetInnerHTML={{__html: this.state.msg}}></div>
+
+        {/* react中插入图片的形式 */}
+        <div className={LayoutCss.itm_title}>react中插入图片</div>
+        <div className={`${LayoutCss.code_area} ${LayoutCss.globalColor_white}`}>
+          在react插入图片可利用下述形式：<br />
+          <div className={LayoutCss.code_notes}>{_imgInsert}</div>
+
+        </div>
+
       </div>
     )
   }
